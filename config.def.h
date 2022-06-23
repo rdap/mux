@@ -42,6 +42,7 @@ static const Layout layouts[] = {
 	{ "🀸",      tile },    /* first entry is default */
 	{ " 🁪 ",      NULL },    /* no layout function means floating behavior */
 	{ " 🝕 ",      monocle },
+	{ NULL,       NULL },
 };
 
 /* key definitions */
@@ -79,8 +80,8 @@ static Key keys[] = {
         { MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
         { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
         { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
-/*        { MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } }, */
-/*        { MODKEY|ShiftMask,             XK_space,  cyclelayout,    {.i = -1 } }, */
+        { MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },
+        { MODKEY|ShiftMask,             XK_space,  cyclelayout,    {.i = -1 } },
         { MODKEY,                       XK_t,      togglefloating, {0} },
         { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
         { MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
