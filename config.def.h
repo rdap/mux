@@ -2,6 +2,7 @@
 
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
+static const unsigned int gappx     = 2;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
@@ -66,8 +67,8 @@ static Key keys[] = {
         { MODKEY,                       XK_b,      togglebar,      {0} },
         { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
         { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
-/*       { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } }, */
-/*       { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } }, */
+/*        { MODKEY|ShiftMask,             XK_j,      movestack,      {.i = +1 } }, */
+/*        { MODKEY|ShiftMask,             XK_k,      movestack,      {.i = -1 } }, */
         { MODKEY,                       XK_comma,  incnmaster,     {.i = +1 } },
         { MODKEY,                       XK_period, incnmaster,     {.i = -1 } },
         { MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
@@ -87,9 +88,9 @@ static Key keys[] = {
         { MODKEY|Mod4Mask,              XK_period, focusmon,       {.i = +1 } },
         { MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
         { MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-/*        { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } }, */
-/*        { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } }, */
-/*        { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } }, */
+        { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+        { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+        { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
         TAGKEYS(                        XK_1,                      0)
         TAGKEYS(                        XK_2,                      1)
         TAGKEYS(                        XK_3,                      2)
