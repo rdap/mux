@@ -39,9 +39,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "🀸",      tile },    /* first entry is default */
-	{ " 🁪 ",      NULL },    /* no layout function means floating behavior */
-	{ " 🝕 ",      monocle },
+	{ "🀱",        tile },    /* first entry is default */
+/*	{ " 🁣 ",      NULL },       vertical split is not yet implemented */
+	{ " μ ",      monocle },
 	{ NULL,       NULL },
 };
 
@@ -78,8 +78,9 @@ static Key keys[] = {
         { MODKEY,                       XK_Tab,    focusstack,     {.i = +1 } },
         { MODKEY|ShiftMask,             XK_Tab,    focusstack,     {.i = -1 } },
         { MODKEY|ShiftMask,             XK_c,      killclient,     {0} },
-        { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} },
-        { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} },
+/*        { MODKEY,                       XK_f,      setlayout,      {.v = &layouts[1]} }, */
+/*        { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[2]} }, */
+        { MODKEY,                       XK_m,      setlayout,      {.v = &layouts[1]} },
         { MODKEY,                       XK_space,  cyclelayout,    {.i = +1 } },
         { MODKEY|ShiftMask,             XK_space,  cyclelayout,    {.i = -1 } },
         { MODKEY,                       XK_t,      togglefloating, {0} },
@@ -108,8 +109,8 @@ static Key keys[] = {
 /* click can be ClkTagBar, ClkLtSymbol, ClkStatusText, ClkWinTitle, ClkClientWin, or ClkRootWin */
 static Button buttons[] = {
 	/* click                event mask      button          function        argument */
-	{ ClkLtSymbol,          0,              Button1,        setlayout,      {0} },
-	{ ClkLtSymbol,          0,              Button3,        setlayout,      {.v = &layouts[2]} },
+	{ ClkLtSymbol,          0,              Button1,        cyclelayout,    {.i = +1 } },
+	{ ClkLtSymbol,          0,              Button3,        cyclelayout,    {.i = -1 } },
 	{ ClkWinTitle,          0,              Button2,        zoom,           {0} },
 	{ ClkStatusText,        0,              Button2,        spawn,          {.v = termcmd } },
 	{ ClkClientWin,         MODKEY,         Button1,        movemouse,      {0} },
